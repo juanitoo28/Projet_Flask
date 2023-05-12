@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Projet Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#input">Input</a></li>
+            <li><a href="#run">Run</a></li>
+            <li><a href="#output">Output</a></li>
+        </ul>
+    </nav>
+    <br><br>
+    <h1>Bonjour, ceci est un projet Flask simple !</h1>
+    <section id="input">
+        <h2>Input</h2>
+        <form id="upload_form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+            <input type="file" name="excel_file" id="excel_file" accept=".xlsx">
+            <button type="submit">Importer</button>
+        </form>
+        <br>
+        <div>
+            <input type="radio" id="client_side" name="preview_method" value="client_side" checked>
+            <label for="client_side">Aperçu côté client</label>
+            <input type="radio" id="server_side" name="preview_method" value="server_side">
+            <label for="server_side">Aperçu côté serveur</label>
+        </div><br>
+        <div id="file_preview"></div>
+    </section>
+
+    <section id="run">
+        <h2>Run</h2>
+        <button id="runFunction">Exécuter la fonction</button>
+    </section>
+
+    <section id="output">
+        <h2>Output</h2>
+        <a href="{{ url_for('download') }}" id="downloadButton">Télécharger le fichier</a>
+    </section>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

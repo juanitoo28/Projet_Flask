@@ -1,3 +1,126 @@
+/*
+Ce fichier CSS fait partie de l'application 'mon_application' du projet Django 'mon_projet'. 
+
+Il définit les règles de style pour divers éléments de l'interface utilisateur, tels que :
+1. La police de caractères globale et les marges pour le corps du document.
+2. L'alignement du texte et les marges pour les éléments 'h1'.
+3. Le style de la barre de navigation (nav), y compris la couleur de fond, l'alignement des éléments et la position fixe.
+4. Les styles pour les listes à l'intérieur de la barre de navigation, y compris la suppression des points de liste et l'alignement des éléments de liste.
+5. Les styles pour les liens dans la barre de navigation, y compris la couleur du texte, le poids de la police et le style de survol.
+6. Les marges et le padding pour les sections.
+7. Les styles pour les boutons et les liens téléchargeables.
+8. Les styles pour l'aperçu du fichier Excel, y compris les bordures, le padding et la couleur de fond alternée pour les lignes paires.
+
+Pour plus d'informations sur les concepts utilisés dans ce fichier, tels que les sélecteurs, les propriétés et les règles de style, consultez :
+- Syntaxe CSS : https://developer.mozilla.org/fr/docs/Web/CSS/Syntaxe_CSS
+- Sélecteurs CSS : https://developer.mozilla.org/fr/docs/Web/CSS/S%C3%A9lecteurs_CSS
+- Propriétés CSS : https://developer.mozilla.org/fr/docs/Web/CSS/Reference
+*/
+
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+nav {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+section {
+    margin-top: 4rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+input[type="file"] {
+    display: block;
+    margin: 0 auto 1rem auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button[type="submit"],
+button#runFunction,
+a#downloadButton {
+    display: inline-block;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 15%;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+}
+
+button[type="submit"]:hover,
+button#runFunction:hover,
+a#downloadButton:hover {
+    background-color: #45a049;
+}
+
+#file_preview {
+    margin-top: 2rem;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#file_preview td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+#file_preview tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#file_preview table {
+    margin: 0 auto;
+}
+
+#excel_file{
+    margin-left: 41%;
 }
